@@ -1,5 +1,7 @@
 package ua.kiev.prog.automation.framework.app.forum.blocks;
 
+import ua.kiev.prog.automation.framework.app.forum.PrivateMessag;
+import ua.kiev.prog.automation.framework.app.forum.ProffPage;
 import ua.kiev.prog.automation.framework.base.widget.GUILink;
 
 public class MainMenuLoggedInBlock extends MainMenuBlock
@@ -13,5 +15,19 @@ public class MainMenuLoggedInBlock extends MainMenuBlock
     public MainMenuLoggedInBlock()
     {
         super();
+    }
+
+    public ProffPage getProffPage ()
+    {
+        this.profile.click();
+        ProffPage page = new ProffPage();
+        //  page.confirmPage();
+        return page;
+    }
+    public PrivateMessag getPrivateMessag(){
+        this.privateMessages.click();
+        PrivateMessag page = new PrivateMessag();
+        return page;
+
     }
 }

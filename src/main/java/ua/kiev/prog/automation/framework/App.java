@@ -17,9 +17,16 @@ public class App
             mainPage.confirmPage();
             mainPage.mainMenu.getHelpPage().mainMenu.getMainPage();
             LoginPage loginPage = mainPage.getLoginPage();
-            MainLoggedInPage mainPageLogged = loginPage.login("qaAutomationAccount","135798642");
-            TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
-            topics.openTopicByName("Java Start Online ДЗ romanvoznyy");
+//            MainLoggedInPage mainPageLogged = loginPage.login("qaAutomationAccount","135798642");
+//            TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
+//            topics.openTopicByName("Java Start Online ДЗ romanvoznyy");
+            loginPage.login("winddanser@gmail.com","P0K8U7W2indForum");
+            MainLoggedInPage loggInPage = new MainLoggedInPage();
+            loggInPage.confirmPage();
+            loggInPage.mainMenu.getPrivateMessag().mainMenu.getMainPage();
+            loggInPage.confirmPage();
+            loggInPage.mainMenu.getProffPage();
+
 
 
         } finally {
