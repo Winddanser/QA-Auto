@@ -25,8 +25,8 @@ public class SessionJUnitTest extends Assert
         mainPage.confirmPage();
         mainPage.mainMenu.getHelpPage().mainMenu.getMainPage();
         LoginPage loginPage = mainPage.getLoginPage();
-        MainLoggedInPage mainPageLogged = loginPage.login("qaAutomationAccount","135798642");
-        TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
+//        MainLoggedInPage mainPageLogged = loginPage.login("qaAutomationAccount","135798642");
+//        TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
 //        topics.openTopicByName("Java Start Online ДЗ romanvoznyy");
     }
 
