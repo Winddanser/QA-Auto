@@ -26,11 +26,22 @@ public class SessionTestNGTest extends Assert
         MainPage mainPage = new MainPage();
         mainPage.confirmPage();
         mainPage.mainMenu.getHelpPage().mainMenu.getMainPage();
+        assertTrue(mainPage.mainMenu.homeLink.isExist(0), "Logout link is not exist after login");
+        assertTrue(mainPage.mainMenu.helpLink.isExist(0), "Logout link is not exist after login");
+        assertTrue(mainPage.mainMenu.searchLink.isExist(0), "Logout link is not exist after login");
+        assertTrue(mainPage.mainMenu.loginLink.isExist(0), "Logout link is not exist after login");
+        assertTrue(mainPage.mainMenu.regLink.isExist(0), "Logout link is not exist after login");
+//        assertFalse(mainPage.mainMenu.logout.isExist(0), "Login link is exist after login");
+        // проверка на отсутствие элементов с помощью контейнера-страницы
+        MainLoggedInPage loggedin = new MainLoggedInPage();
+        assertFalse(loggedin.mainMenu.logout.isExist(0), "Login link is exist after login");
+
         LoginPage loginPage = mainPage.getLoginPage();
         MainLoggedInPage mainPageLogged = loginPage.login("qaAutomationAccount","135798642");
-        TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
-        topics.openTopicByName("Java Start Online ДЗ romanvoznyy");
-
+//        TopicListPage topics = mainPageLogged.categoryList.getCategory("Программирование").openBoard("Java SE");
+//        topics.openTopicByName("Java Start Online ДЗ romanvoznyy");
+        assertFalse(mainPageLogged.mainMenu.loginLink.isExist(0), "Login link is exist after login");
+        assertTrue(mainPageLogged.mainMenu.logout.isExist(0), "Logout link is not exist after login");
     }
 
     @Test(priority = 1)
